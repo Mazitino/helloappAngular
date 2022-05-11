@@ -1,0 +1,32 @@
+<div class="page">
+    
+    <div class="block">
+        <h2>Родительский компонент:</h2>
+        <p>Имя: {{name}}</p>
+        <p>Возраст: {{age}}</p>
+        <input [(ngModel)]="name" placeholder="Имя">
+        <input type="number" [(ngModel)]="age" placeholder="Возраст">
+        <h1>Количество кликов (кнопка в дочернем): {{ clicks }}</h1>
+        <button (click)="counter.increment()">+</button>
+        <button (click)="counter.decrement()">-</button>
+    </div>
+    <div class="block">
+         
+        <h2>Дочерний компонент:</h2>
+        <child-comp 
+            #counter
+            [(userName)]="name" 
+            [userAge]="age" 
+            (onChanged)="onChanged($event)" 
+        ></child-comp>	
+
+    </div>
+    <div class="block">
+        <input type="text" [value]="name" />
+        <input type="text" value="{{ name }}" />
+
+        <button (click)="addItem()">+++</button>
+        <button on-click="addItem()">Click</button>
+        <button (click)="addItem2($event)">Click</button>
+    </div>
+</div>	
