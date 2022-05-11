@@ -10,7 +10,7 @@ export class AppComponent {
     name:string = '';
     age:number = null;
     clicks:number = 0;
-
+    isRed = false;
     //Чтение с дочерненго компонента через привязку к событию
     onChanged(increased:any){
         increased == true ? this.clicks++ : this.clicks--;
