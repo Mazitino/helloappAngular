@@ -62,7 +62,7 @@ export class ChildComponent {
     change(increased:any){
         this.onChanged.emit(increased);
     }
-
+ 
     @Output() userNameChange = new EventEmitter<string>();
     onNameChange(model: string){
         this.userName = model;

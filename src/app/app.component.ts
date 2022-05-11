@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -23,5 +23,5 @@ export class AppComponent {
         this.name += 'd';
         console.log($event);
     }
- 
+  
 }
