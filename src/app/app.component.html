@@ -6,10 +6,23 @@
         <p>Возраст: {{age}}</p>
         <input [(ngModel)]="name" placeholder="Имя">
         <input type="number" [(ngModel)]="age" placeholder="Возраст">
-        <h1>Количество кликов (кнопка в дочернем): {{ clicks }}</h1>
-        <button (click)="counter.increment()">+</button>
-        <button (click)="counter.decrement()">-</button>
+        <p class="Alarm">Количество кликов (кнопка в дочернем): {{ clicks }}</p>
+        
+        <!-- Изменение кликов через шаблонную переменную-->
+        <div class="block">
+            <p>Изменение кликов через шаблонную переменную:</p>
+            <button class="btn" (click)="counter.increment()">+</button>
+            <button class="btn" (click)="counter.decrement()">-</button>
+        </div>
 
+        <!-- Изменение кликов через ViewChild-->
+        <div class="block">
+            <p>Изменение кликов через ViewChild:</p>
+            <button class="btn" (click)="increment()">+</button>
+            <button class="btn" (click)="decrement()">-</button>
+        </div>
+
+         <!--Дочерние компоненты 1 и 2-->
         <div class="block">
          
             <h2>Дочерний компонент:</h2>

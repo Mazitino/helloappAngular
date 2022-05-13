@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
+import { ChildComponent } from './child.component';
 
 
 @Component({
@@ -23,5 +24,14 @@ export class AppComponent {
         this.name += 'd';
         console.log($event);
     }
-  
+
+    //Декоратор ViewChild применяется к свойству 
+    //и получает селектор элемента DOM, 
+    //который необходимо отслеживать
+    @ViewChild(ChildComponent, {static: false})
+    private counterComponent: ChildComponent|undefined;
+
+    increment() { this.counterComponent?.increment(); }
+    decrement() { this.counterComponent?.decrement(); }
+    
 }

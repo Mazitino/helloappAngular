@@ -3,8 +3,6 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 @Component({
     selector: 'child-comp',
     template: `
-                
-                
                 <p>Имя пользователя: 
                     {{ userName }}
                 </p>
@@ -17,15 +15,23 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
                     (ngModelChange)="onNameChange($event)" 
                     placeholder="Имя" 
                 />
-                <p>
-                    Количество кликов (кнопка в родительском): 
-                    {{ counter }}
-                </p>
+                <div class="Warning">
+                    <p>
+                        Количество кликов (кнопка в родительском)
+                    </p>
+                    <p>
+                        Шаблоннная переменная или viewChild
+                        {{ counter }}
+                    </p>
+                </div>
+
                 <button 
+                    class="btn-chld"
                     (click)="change(true)"
                 >+</button>
 
                 <button 
+                    class="btn-chld"
                     (click)="change(false)"
                 >-</button>`,
     styleUrls: ['./app.component.css']
@@ -37,7 +43,7 @@ export class ChildComponent {
     counter: number = 0;
     increment() { this.counter++; }
     decrement() { this.counter--; }
-
+    
 
     //Чтение значения с родительского компонента (напрямую)
     @Input() userName: string = "";
